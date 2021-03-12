@@ -6,13 +6,22 @@ public class Suspect {
      private String suspectCountry;
      private String suspectActivityCity;
      
-     private ArrayList<int[]> phoneNumber =new ArrayList<int[]>();
+     private ArrayList<String> phoneNumbers =new ArrayList<String>();
      private ArrayList<Suspect> partners =new ArrayList<Suspect>();
 	
      
      
      
-     public String getSuspectName() {
+     
+	public Suspect(String suspectName, String suspectCodeName, String suspectCountry, String suspectActivityCity) {
+		super();
+		this.suspectName = suspectName;
+		this.suspectCodeName = suspectCodeName;
+		this.suspectCountry = suspectCountry;
+		this.suspectActivityCity = suspectActivityCity;
+		
+	}
+	public String getSuspectName() {
 		return suspectName;
 	}
 	public void setSuspectName(String suspectName) {
@@ -36,11 +45,11 @@ public class Suspect {
 	public void setSuspectActivityCity(String suspectActivityCity) {
 		this.suspectActivityCity = suspectActivityCity;
 	}
-	public ArrayList<int[]> getPhoneNumber() {
-		return phoneNumber;
+	public ArrayList<String> getPhoneNumber() {
+		return phoneNumbers;
 	}
-	public void setPhoneNumber(ArrayList<int[]> phoneNumber) {
-		this.phoneNumber = phoneNumber;
+	public void setPhoneNumber(ArrayList<String> phoneNumber) {
+		this.phoneNumbers = phoneNumber;
 	}
 	public ArrayList<Suspect> getPartners() {
 		return partners;
@@ -49,6 +58,25 @@ public class Suspect {
 		this.partners = partners;
 	}
     
-     
-     
+    public void addNumber(String aNumber) {
+    	//The problem is here
+    	for (String i : phoneNumbers) 
+    	{
+    		if( i.equals(aNumber)) {
+    		  System.out.println("The number has already added");
+    		}
+    		else {
+    	phoneNumbers.add(aNumber);
+    	System.out.println("The number has added successfully");
+    		}
+    	}	
+    }
+    
+public void PrintInfoOfThe() {
+	for (String i : phoneNumbers) {
+		System.out.println(i);
+		
+	}
 }
+}
+
