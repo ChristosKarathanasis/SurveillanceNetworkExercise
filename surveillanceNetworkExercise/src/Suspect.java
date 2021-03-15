@@ -59,24 +59,26 @@ public class Suspect {
 	}
     
     public void addNumber(String aNumber) {
-    	//The problem is here
-    	for (String i : phoneNumbers) 
-    	{
-    		if( i.equals(aNumber)) {
-    		  System.out.println("The number has already added");
-    		}
-    		else {
-    	phoneNumbers.add(aNumber);
-    	System.out.println("The number has added successfully");
-    		}
-    	}	
+    	if(aNumber.equals("EXIT")) 
+    		System.out.println("See you next time");
+    	else {	
+    	  boolean flag = false;
+    	  for (String i : phoneNumbers) {
+    		if(aNumber.equals(i))
+    			flag = true;
+    		    }
+    	  if(flag) 
+    		System.out.println("The number has already added");
+    	  else {
+    		phoneNumbers.add(aNumber);
+    		System.out.println("The number has added successfully");
+    	  }
+    	} 	  
     }
     
 public void PrintInfoOfThe() {
-	for (String i : phoneNumbers) {
+	for (String i : phoneNumbers) 
 		System.out.println(i);
-		
-	}
-}
+		}
 }
 

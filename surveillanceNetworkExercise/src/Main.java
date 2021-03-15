@@ -10,14 +10,17 @@ public class Main {
        
        //phoneCall1.PrintInfo();
        
-       //Scanner console = new Scanner(System.in);
-
+       Scanner console = new Scanner(System.in);
+       String aNumber;
+       do {
+         System.out.print("Enter a new Number for the suspect's list \n");
+         System.out.print("***If you want to exit type EXIT*** \n");
+         aNumber = console.next();
+         aSuspect.addNumber(aNumber);
+       }while(!(aNumber.equals("EXIT")));
+      
+      
        
-       //System.out.print("Enter a new Number for the suspect's list \n");
-       //String aNumber = console.next();
-       String aNumber = "6982440822";
-       aSuspect.addNumber(aNumber);
-      // aSuspect.PrintInfoOfThe();
        
 	}
 	
